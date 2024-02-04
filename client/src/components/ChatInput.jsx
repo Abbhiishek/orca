@@ -15,7 +15,7 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
         }
 
         try {
-            await axios.post(`${import.meta.env.VITE_BACKEND_URL}/message`, { message })
+            await axios.post(`${import.meta.env.VITE_BACKEND_URL}/message/`, { message })
             getUserMessages()
             getClickedUsersMessages()
             setTextArea("")

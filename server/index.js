@@ -9,10 +9,13 @@ require('dotenv').config()
 
 const uri = process.env.URI || ""
 
-
-
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: true, // reflect (enable) the requested origin in the CORS response
+    credentials: true, // allow cookies to be sent with the request
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'] // allowed headers
+}))
 app.use(express.json())
 app.use(express.static('public'))
 
@@ -253,4 +256,4 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log('server running on PORT ' + PORT))
 
 
-export default app;
+module.exports = app;

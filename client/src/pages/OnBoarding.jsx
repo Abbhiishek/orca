@@ -22,7 +22,7 @@ const OnBoarding = () => {
         console.log('submitted')
         e.preventDefault()
         try {
-            const response = await axios.put('${import.meta.env.VITE_BACKEND_URL}/user', { formData })
+            const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/user`, { formData })
             console.log(response)
             const success = response.status === 200
             if (success) navigate('/dashboard')

@@ -20,7 +20,7 @@ const Dashboard = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/user', {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user`, {
                 params: { userId }
             })
             setUser(response.data)
@@ -30,7 +30,7 @@ const Dashboard = () => {
     }
     const getGenreUsers = async () => {
         try {
-            const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/genre-users', {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/genre-users`, {
                 params: { genre: user?.genre }
             })
             setGenreUsers(response.data)
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('${import.meta.env.VITE_BACKEND_URL}/addmatch', {
+            await axios.put(`${import.meta.env.VITE_BACKEND_URL}/addmatch`, {
                 userId,
                 matchedUserId
             })

@@ -36,7 +36,7 @@
 
 
 .wave {
-    background-image: url("../src/assets/water2.gif");
+    background-image: url("/assets/water2.gif");
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;

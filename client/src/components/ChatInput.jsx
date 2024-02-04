@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
@@ -15,7 +15,7 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
         }
 
         try {
-            await axios.post('http://localhost:8000/message', { message })
+            await axios.post('${import.meta.env.env.VITE_BACKEND_URL}/message', { message })
             getUserMessages()
             getClickedUsersMessages()
             setTextArea("")
@@ -27,7 +27,7 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
 
     return (
         <div className="chat-input">
-            <textarea className="border-2 border-[#2b0d40]" placeholder="Ask your favourite artist..." value={textArea} onChange={(e) => setTextArea(e.target.value)}/>
+            <textarea className="border-2 border-[#2b0d40]" placeholder="Ask your favourite artist..." value={textArea} onChange={(e) => setTextArea(e.target.value)} />
             <button className="secondary-button" onClick={addMessage}>Submit</button>
         </div>
     )

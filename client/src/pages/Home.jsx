@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Nav from '../components/Nav'
 import AuthModal from "../components/AuthModal"
 import { useCookies } from "react-cookie"
@@ -32,7 +32,7 @@ export default function Home() {
       <div className="flex justify-around flex-row">
         <div className="flex flex-col justify-center items-center text-[#912626] dark:text-yellow-500">
           <div className="flex flex-row justify-center items-center text-[#912626] dark:text-yellow-500">
-            <img className="eye h-[35vh]" src="../src/assets/eye.gif" />
+            <img className="eye h-[35vh]" src="/assets/eye.gif" />
             <h1 className="text-[30vh] font-orka drop-shadow-3xl">RCA</h1>
           </div>
           <p className="mr-80 ml-60 mb-64 text-2xl font-bold text-justify ">"Stop soloing and start jamming! Find your musical soulmate in a swipe."</p>
@@ -40,7 +40,7 @@ export default function Home() {
 
         <img
           width={"450px"}
-          className="music mb-28 mt-14" src="../src/assets/music.svg" alt=""
+          className="music mb-28 mt-14" src="/assets/music.svg" alt=""
         />
       </div>
 
@@ -53,7 +53,7 @@ export default function Home() {
             have landed<a className="text-pink-700">.</a>
           </h1>
           <p className="text-xl px-40 mt-2 font-mono dark:text-orange-400">
-            Art isn't just expression. It's politics, it's a dialogue, it's a debate. And with so much going on in the world, we artists can't help but have our say in matters of interest.
+            Art isn&apos;t just expression. It&apos;s politics, it&apos;s a dialogue, it&apos;s a debate. And with so much going on in the world, we artists can't help but have our say in matters of interest.
           </p>
         </div>
         <div className="wave" />
@@ -71,10 +71,10 @@ export default function Home() {
           {showModal && (
             <AuthModal setShowModal={setShowModal} isSignUp={isSignUp} />
           )}
-          <img className="absolute top-0 left-0 h-[25vh] rotate-12" src="../src/assets/orange.png" alt="Orange Image" />
-          <img className="absolute top-0 right-0 h-[40vh]" src="../src/assets/3pg.svg" alt="3PG Image" />
-          <img className="absolute bottom-0 left-0 h-[40vh] rotate-90" src="../src/assets/ray.svg" alt="Ray Image" />
-          <img className="absolute bottom-0 right-0 h-[45vh]" src="../src/assets/mic.png" alt="Mic Image" />
+          <img className="absolute top-0 left-0 h-[25vh] rotate-12" src="/assets/orange.png" alt="Orange Image" />
+          <img className="absolute top-0 right-0 h-[40vh]" src="/assets/3pg.svg" alt="3PG Image" />
+          <img className="absolute bottom-0 left-0 h-[40vh] rotate-90" src="/assets/ray.svg" alt="Ray Image" />
+          <img className="absolute bottom-0 right-0 h-[45vh]" src="/assets/mic.png" alt="Mic Image" />
         </div>
       </div>
     </div>

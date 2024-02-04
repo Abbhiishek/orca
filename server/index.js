@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt')
 require('dotenv').config()
 
 
-const uri = process.env.URI
+const uri = process.env.URI || ""
 
 const app = express()
 app.use(cors())
@@ -248,3 +248,6 @@ app.post('/message', async (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log('server running on PORT ' + PORT))
+
+
+module.exports = app

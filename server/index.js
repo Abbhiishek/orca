@@ -9,9 +9,12 @@ require('dotenv').config()
 
 const uri = process.env.URI || ""
 
+
+
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(express.static('public'))
 
 // Default
 app.get('/', (req, res) => {

@@ -11,10 +11,9 @@ const uri = process.env.URI || ""
 
 const app = express()
 app.use(cors({
-    origin: "https://orcaa.vercel.app/"
+    origin: "*"
 }))
 app.use(express.json())
-app.use(express.static('public'))
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");

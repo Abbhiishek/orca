@@ -10,14 +10,19 @@ require('dotenv').config()
 const uri = process.env.URI || ""
 
 const app = express()
-app.use(cors({
-    origin: true, // reflect (enable) the requested origin in the CORS response
-    credentials: true, // allow cookies to be sent with the request
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'] // allowed headers
-}))
+app.use(cors())
 app.use(express.json())
 app.use(express.static('public'))
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept",
+    );
+    next();
+});
 
 // Default
 app.get('/', (req, res) => {
